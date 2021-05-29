@@ -1,3 +1,4 @@
+const body = document.querySelector('body');
 const musicContainer = document.getElementById('music-container');
 const playBtn = document.getElementById('play');
 const prevBtn = document.getElementById('prev');
@@ -30,12 +31,17 @@ function playSong() {
 	musicContainer.classList.add('play');
 	playBtn.querySelector('i.fas').classList.remove('fa-play');
 	playBtn.querySelector('i.fas').classList.add('fa-pause');
-
+	body.style.background = `linear-gradient(190deg, rgba(252,221,221,1) 0%, rgba(247,247,247,1) 50%)`;
 	audio.play();
 }
 
 // Pause song
 function pauseSong() {
+	body.style.background = `linear-gradient(
+		0deg,
+		rgba(247, 247, 247, 1) 23.8%,
+		rgba(252, 221, 221, 1) 92%
+	)`;
 	musicContainer.classList.remove('play');
 	playBtn.querySelector('i.fas').classList.add('fa-play');
 	playBtn.querySelector('i.fas').classList.remove('fa-pause');
